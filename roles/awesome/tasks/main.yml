@@ -28,3 +28,8 @@
         force=yes
         state=link
 
+- name: setup awsome autostart - unity-settings-daemon
+  copy:
+    src=unity-settings-daemon.desktop
+    dest=/etc/xdg/autostart/unity-settings-daemon.desktop
+

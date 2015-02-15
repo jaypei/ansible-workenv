@@ -4,8 +4,12 @@
 
 - name: clone dotfiles-unix
   git: repo=https://github.com/jaypei/dotfiles-unix.git
+       dest={{dotfiles_dir}}/dotfiles-unix
 
 - name: install rxvt-unicode
   apt: pkg=rxvt-unicode
 
-
+- name: setup rxvt-unicode dotfile
+  file: src={{dotfiles_dir}}/dotfiles-unix/x/Xdefaults
+        dest={{main_user_home_dir}}/.Xdefaults
+        state=link

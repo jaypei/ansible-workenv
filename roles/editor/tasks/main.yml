@@ -1,8 +1,8 @@
 ---
-- name: ensure vim is at the latest version
-  apt: pkg=vim state=latest
+- name: install vim package
+  apt: pkg=vim
 
-- name: ensure vim is at the latest version
-  apt: pkg=emacs state=latest
+- name: install emacs package
+  apt: pkg=emacs
 
 

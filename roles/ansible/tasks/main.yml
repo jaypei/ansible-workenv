@@ -1,0 +1,5 @@
+---
+- name: add ansible ppa
+  action: apt_repository
+          repo=ppa:rquillo/ansible
+          state=present
