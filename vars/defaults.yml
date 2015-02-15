@@ -1,0 +1,13 @@
+---
+##############################################################################
+# DO NOT EDIT. Set your variables in `vars/user.yml` instead.
+# This is a reference of all the variables.
+##############################################################################
+
+# # common
+# main_user_name: (required)
+main_user_home_dir: /home/{{main_user_name}}
+work_dir: "{{main_user_home_dir}}/work"
+dotfiles_dir: "{{main_user_home_dir}}/dotfiles"
+main_user_shell: "/bin/bash"
+

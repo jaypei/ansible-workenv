@@ -1,0 +1,10 @@
+---
+- hosts: local
+  vars_files:
+    - vars/defaults.yml
+    - vars/user.yml
+  roles:
+    - ubuntu
+    - editor
+    - awesome
+

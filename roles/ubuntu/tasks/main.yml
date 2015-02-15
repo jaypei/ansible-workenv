@@ -1,0 +1,11 @@
+---
+- name: install aptitude package
+  apt: pkg=aptitude
+
+- name: clone dotfiles-unix
+  git: repo=https://github.com/jaypei/dotfiles-unix.git
+
+- name: install rxvt-unicode
+  apt: pkg=rxvt-unicode
+
+

@@ -1,0 +1,3 @@
+---
+- name: install rxvt-unicode
+  apt: pkg=rxvt-unicode

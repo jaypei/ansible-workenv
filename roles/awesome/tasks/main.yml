@@ -1,0 +1,30 @@
+---
+- name: Add git ppa key
+  action: apt_repository repo=ppa:klaus-vormweg/awesome state=present
+
+- name: install awesome
+  apt: pkg=awesome state=latest
+
+- name: install awesome-extra
+  apt: pkg=awesome-extra state=latest
+
+- name: install shutter
+  apt: pkg=shutter
+
+- name: install kbdd
+  apt: pkg=kbdd
+
+- name: create awesome.session
+  copy: src=awesome.session
+        dest=/usr/share/gnome-session/sessions/awesome.session
+
+- name: clone awesome dotfiles
+  git: repo=https://github.com/jaypei/dotfiles-awesome.git
+       dest={{dotfiles_dir}}/dotfiles-awesome
+
+- name: setup awesome dotfile
+  file: src={{dotfiles_dir}}/dotfiles-awesome
+        dest={{main_user_home_dir}}/.config/awesome
+        force=yes
+        state=link
+
